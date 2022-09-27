@@ -1,0 +1,229 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.page1-main {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  margin-left: 84px;
+}
+.howdy {
+  width: 575px;
+  height: 285px;
+
+  font-family: "Giddyup Std";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 110px;
+  line-height: 132px;
+  margin-top: 265px;
+}
+.clickhere {
+  margin-top: 38px;
+  width: 306px;
+  height: 84px;
+
+  font-family: "Giddyup Std";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 70px;
+  line-height: 84px;
+
+  color: #f3a208;
+}
+.cake {
+  width: 125px;
+  height: 140px;
+  margin-left: 21px;
+  cursor: pointer;
+}
+.wheel {
+  background-color: #f3a308;
+  aspect-ratio: 1;
+  height: 69vh;
+  margin-top: 76px;
+  margin-left: 80px;
+  border-radius: 50%;
+  position: relative;
+}
+.clock-center {
+  position: absolute;
+  width: 6.55%;
+  aspect-ratio: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.clock-pin {
+  position: absolute;
+  width: 7.09%;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -100%);
+}
+
+.emoji-container {
+  width: 16.9%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #f4c751;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.emoji-container.n1 {
+  top: 7.91%;
+  left: 61.79%;
+}
+.emoji-container.n2 {
+  top: 22.09%;
+  left: 76.27%;
+}
+.emoji-container.n3 {
+  top: 41.84%;
+  left: 81.34%;
+}
+.emoji-container.n4 {
+  top: 61.59%;
+  left: 76.27%;
+}
+.emoji-container.n5 {
+  top: 74.78%;
+  left: 61.79%;
+}
+.emoji-container.n6 {
+  top: 79.7%;
+  left: 41.79%;
+}
+.emoji-container.n7 {
+  top: 74.78%;
+  left: 21.49%;
+}
+.emoji-container.n8 {
+  top: 60.89%;
+  left: 6.86%;
+}
+.emoji-container.n9 {
+  top: 41.84%;
+  left: 1.79%;
+}
+.emoji-container.n10 {
+  top: 22.09%;
+  left: 6.86%;
+}
+.emoji-container.n11 {
+  top: 7.91%;
+  left: 21.49%;
+}
+.emoji-container.n12 {
+  top: 3.88%;
+  left: 41.79%;
+}
+.wheel-emoji {
+  width: 56.25%;
+  aspect-ratio: 1;
+}
+.i {
+  position: absolute;
+}
+.i-hamburger {
+  position: absolute;
+  width: 118.59px;
+  height: 143.84px;
+  left: 57.42px;
+  top: 228.12px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 120px;
+  line-height: 144px;
+
+  color: #000000;
+
+  transform: rotate(-15deg);
+}
+.i-eggpan {
+  position: absolute;
+  width: 211px;
+  height: 256px;
+  left: 545px;
+  top: 51px;
+
+  font-family: "Giddyup Std";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 150px;
+  line-height: 180px;
+
+  color: #000000;
+
+  transform: rotate(-90deg);
+}
+.i-pizza {
+  position: absolute;
+  width: 211.2px;
+  height: 256.19px;
+  left: -76px;
+  bottom: -70px;
+  font-family: "Giddyup Std";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 200px;
+  line-height: 240px;
+
+  transform: rotate(45deg);
+}
+.i-popcorn {
+  position: absolute;
+  width: 211.2px;
+  height: 256.19px;
+  font-size: 150px;
+  line-height: 180px;
+  transform: rotate(30deg);
+  left: 420px;
+  bottom: -155px;
+}
+.i-icecream {
+  position: absolute;
+  width: 211.2px;
+  height: 256.19px;
+  right: -52px;
+  bottom: -160px;
+
+  font-family: "Giddyup Std";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 120px;
+  line-height: 144px;
+
+  color: #000000;
+
+  transform: rotate(-15deg);
+}
+.i-cake {
+  position: absolute;
+  width: 211.2px;
+  height: 256.19px;
+  right: -30px;
+  top: 125px;
+
+  font-family: "Giddyup Std";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 150px;
+  line-height: 180px;
+
+  color: #000000;
+
+  transform: rotate(30deg);
+}
