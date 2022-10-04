@@ -12,44 +12,39 @@
 .left {
   display: flex;
   flex-direction: column;
-  margin-left: 84px;
+  margin-left: 5.833vw;
 }
 .howdy {
-  width: 575px;
-  height: 285px;
 
-  font-family: "Giddyup Std";
-  font-style: normal;
   font-weight: 400;
-  font-size: 110px;
-  line-height: 132px;
-  margin-top: 265px;
+  font-size: 10.74vh;
+  line-height: 12.89vh;
+  margin-top: 25.88vh;
 }
 .clickhere {
-  margin-top: 38px;
-  width: 306px;
-  height: 84px;
+  margin-top: 3.72vh;
 
   font-family: "Giddyup Std";
   font-style: normal;
   font-weight: 400;
-  font-size: 70px;
-  line-height: 84px;
+  font-size: 6.83vh;
+  line-height: 8.2vh;
 
   color: #f3a208;
 }
 .cake {
-  width: 125px;
-  height: 140px;
-  margin-left: 21px;
+  width: 8.68vw;
+  height: 13.67vh;
+  object-fit: contain;
+  margin-left: 1.458vw;
   cursor: pointer;
 }
 .wheel {
   background-color: #f3a308;
   aspect-ratio: 1;
   height: 69vh;
-  margin-top: 76px;
-  margin-left: 80px;
+  margin-top: 7.42vh;
+  margin-left: 10vw;
   border-radius: 50%;
   position: relative;
 }
@@ -135,95 +130,74 @@
 }
 .i {
   position: absolute;
+  overflow: visible;
 }
 .i-hamburger {
   position: absolute;
-  width: 118.59px;
-  height: 143.84px;
-  left: 57.42px;
-  top: 228.12px;
+  left: 3.958vw;
+  top: 15.83vh;
 
   font-style: normal;
   font-weight: 400;
-  font-size: 120px;
-  line-height: 144px;
-
-  color: #000000;
+  font-size: 11.72vh;
+  line-height: 14.06vh;
 
   transform: rotate(-15deg);
 }
 .i-eggpan {
   position: absolute;
-  width: 211px;
-  height: 256px;
-  left: 545px;
-  top: 51px;
+  /* min-width: 14.65vw; */
+  /* height: 18vh; */
+  left: 37.85vw;
+  top: 8vh;
 
-  font-family: "Giddyup Std";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 150px;
-  line-height: 180px;
-
-  color: #000000;
+  font-size: 15.43vh;
+  line-height: 17.58vh;
 
   transform: rotate(-90deg);
 }
 .i-pizza {
   position: absolute;
-  width: 211.2px;
-  height: 256.19px;
-  left: -76px;
-  bottom: -70px;
-  font-family: "Giddyup Std";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 200px;
-  line-height: 240px;
+  min-width: 14.65vw;
+  min-height: 25vh;
+  left: -5.28vw;
+  bottom: -6.83vh;
+  font-size: 19.53vh;
+  line-height: 23.43vh;
 
   transform: rotate(45deg);
 }
 .i-popcorn {
   position: absolute;
-  width: 211.2px;
-  height: 256.19px;
-  font-size: 150px;
-  line-height: 180px;
+  min-width: 14.65vw;
+  min-height: 25vh;
+  font-size: 14.65vh;
+  line-height: 17.58vh;
   transform: rotate(30deg);
-  left: 420px;
-  bottom: -155px;
+  left: 29.17vw;
+  bottom: -15.14vh;
 }
 .i-icecream {
   position: absolute;
-  width: 211.2px;
-  height: 256.19px;
-  right: -52px;
-  bottom: -160px;
+  width: 20.61vw;
+  min-height: 25vh;
+  right: -3.61vw;
+  bottom: -13vh;
 
-  font-family: "Giddyup Std";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 120px;
-  line-height: 144px;
-
-  color: #000000;
+  font-size: 11.72vh;
+  line-height: 14.06vh;
 
   transform: rotate(-15deg);
 }
 .i-cake {
   position: absolute;
-  width: 211.2px;
-  height: 256.19px;
-  right: -30px;
-  top: 125px;
+  width: 20.61vw;
+  min-height: 25vh;
+  right: -2.08vw;
+  top: 14vh;
 
-  font-family: "Giddyup Std";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 150px;
-  line-height: 180px;
-
-  color: #000000;
+  font-size: 14.65vh;
+  line-height: 17.58vh;
 
   transform: rotate(30deg);
 }
