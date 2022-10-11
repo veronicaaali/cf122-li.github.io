@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>My App bodyheight885</title>
+    <title>Mooood</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./common.css" />
     <link rel="stylesheet" href="./indexpage.css" />
@@ -81,13 +81,75 @@
         </div>
       </div>
       <div class="top actual">
-        <div class="hamburger">
+        <div id="hamburger-actual" class="hamburger">
           <img src="images/ham.png" />
           <img src="images/ham.png" />
           <img src="images/ham.png" />
         </div>
-        <div class="top-txt">Home</div>
+        <div class="menu-container">
+          <div id="top-menu">
+            <div id="home-button">Back to Wheel</div>
+            <div class="menu-content">
+              <div class="menu-emoji">😮‍💨</div>
+
+              <div class="menu-emoji">😪</div>
+
+              <div class="menu-emoji">😘</div>
+
+              <div class="menu-emoji">😑</div>
+
+              <div class="menu-emoji">😤</div>
+            </div>
+          </div>
+        </div>
+        <div id="top-title" class="top-txt">Home</div>
       </div>
+      <script>
+        const title = document.getElementById("top-title");
+        const hamburger = document.getElementById("hamburger-actual");
+        const menu = document.getElementById("top-menu");
+        const homeButton = document.getElementById("home-button");
+        const menuContent = document.querySelector(".menu-content");
+        // console.log(menuContent)
+
+        homeButton.onclick = () => {
+          window.location.href = "./index.html";
+        };
+
+        const handleChangeOpen = (shouldOpen) => {
+          if (shouldOpen) {
+            title.innerText = "How's your mood today?";
+            menu.style.display = "flex";
+          } else {
+            title.innerText = "Home";
+            menu.style.display = "none";
+          }
+        };
+        hamburger.onmouseenter = () => handleChangeOpen(true);
+        menu.onmouseleave = () => handleChangeOpen(false);
+
+        for (let i = 0; i < menuContent.children.length; i++) {
+          if (i > 4) menuContent.children[i].style.display = "none";
+          menuContent.children[i].onclick = () => {
+            window.location.href = `./page${i + 1}.html`;
+          };
+        }
+        const vh = (px) => `${px / 10.24}vh`;
+        menuContent.children[0].style.left = vh(54);
+        menuContent.children[0].style.top = vh(223);
+
+        menuContent.children[1].style.right = vh(39);
+        menuContent.children[1].style.top = vh(144);
+
+        menuContent.children[2].style.right = vh(186);
+        menuContent.children[2].style.top = vh(57);
+
+        menuContent.children[3].style.right = vh(46);
+        menuContent.children[3].style.bottom = vh(48);
+
+        menuContent.children[4].style.right = vh(81);
+        menuContent.children[4].style.top = vh(271);
+      </script>
     </div>
   </body>
 </html>

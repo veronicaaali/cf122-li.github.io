@@ -45,17 +45,55 @@ body {
   font-weight: 400;
   /* font-size: 100px; */
 }
+.top.spacer {
+  opacity: 0.1;
+}
 .top.actual {
   position: absolute;
   top: 0;
   left: 0;
 }
+#menu-container{
+  position: relative;
+  height: 100%
+}
+#top-menu {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  align-items: stretch;
+  left: 0;
+  top: 100%;
+  width: 59.08vh;
+  cursor: pointer;
+}
+#home-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F3A208;
+  height: 13.48vh;
+  /* width: 100%; */
+  cursor: pointer;
+}
+.menu-content {
+  position: relative;
+  height: 63.08vh;
+  background-color: #F2CB04;
+  cursor:unset;
+}
+.menu-emoji {
+  position: absolute;
+  font-size: 8.3vh;
+}
 .hamburger {
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: space-between;
   height: 5.5vh;
   margin: 0 3.52vh;
+  cursor: pointer;
 }
 .hamburger > img {
   width: 7.8vh;
