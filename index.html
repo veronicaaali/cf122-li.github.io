@@ -177,12 +177,14 @@
           console.log("page", emojiIndex + 1);
           emojis.forEach((emoji, index) => {
             if (index === emojiIndex && emojiIndex < max) {
-              emoji.style.transitionDuration = "1s";
-              emoji.style.transform = "scale(5)";
-              emoji.parentElement.style.zIndex = 100;
               setTimeout(() => {
-                window.location.href = `page${emojiIndex + 1}.html`;
-              }, 1000);
+                emoji.style.transitionDuration = "1s";
+                emoji.style.transform = "scale(5)";
+                emoji.parentElement.style.zIndex = 100;
+                setTimeout(() => {
+                  window.location.href = `page${emojiIndex + 1}.html`;
+                }, 1000);
+              }, 600);
             }
           });
         };
