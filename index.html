@@ -33,9 +33,7 @@
           </div>
           <div class="flex-row">
             <div class="clickhere">Click Here→</div>
-            <a href="./page1.html">
-              <img class="cake" src="images/cake.jpg" />
-            </a>
+            <img class="cake" src="images/cake.jpg" />
           </div>
         </div>
         <div class="wheel">
@@ -149,6 +147,74 @@
 
         menuContent.children[4].style.right = vh(81);
         menuContent.children[4].style.top = vh(271);
+      </script>
+
+      <script>
+        const wheel = document.querySelector(".wheel");
+        const btn = document.querySelector(".clickhere");
+        const pin = document.querySelector(".clock-pin");
+        const emojis = document.querySelectorAll(".wheel-emoji");
+        const cake = document.querySelector(".cake");
+
+        let emojiIndex = 0;
+
+        const doDeree = (n) => {
+          // wheel.style.transform = `rotate(${n}deg)`;
+          pin.style.transform = `translate(-50%, -100%) rotate(${n}deg)`;
+          emojiIndex = Math.floor((((n - 15) % 360) / 30 + 12) % 12);
+          // console.log(emojiIndex);
+          emojis.forEach((emoji, index) => {
+            if (index === emojiIndex) {
+              emoji.classList.add("active");
+            } else {
+              emoji.classList.remove("active");
+            }
+          });
+        };
+
+        const goDegree = () => {
+          let max = 5;
+          console.log("page", emojiIndex + 1);
+          emojis.forEach((emoji, index) => {
+            if (index === emojiIndex && emojiIndex < max) {
+              emoji.style.transitionDuration = "1s";
+              emoji.style.transform = "scale(5)";
+              emoji.parentElement.style.zIndex = 100;
+              setTimeout(() => {
+                window.location.href = `page${emojiIndex + 1}.html`;
+              }, 1000);
+            }
+          });
+        };
+
+        let n = 0;
+        let stopped = true;
+        let topSpeed = 2;
+        let speed = 0.25;
+        let accel = 0.005;
+
+        const interval = setInterval(() => {
+          if (stopped) {
+            speed = 0.3;
+            return;
+          }
+
+          n += speed;
+          if (speed < topSpeed) {
+            speed += accel;
+          }
+          doDeree(n);
+        }, 3);
+
+        const run = () => {
+          if (!stopped) {
+            stopped = true;
+            goDegree();
+          } else {
+            stopped = false;
+          }
+        };
+        cake.onmousedown = run;
       </script>
     </div>
   </body>

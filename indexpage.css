@@ -63,6 +63,8 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -100%);
+  transform-origin: bottom;
+
 }
 
 .emoji-container {
@@ -125,8 +127,12 @@
   left: 41.79%;
 }
 .wheel-emoji {
+  transition: all 90ms ease-in-out;
   width: 56.25%;
   aspect-ratio: 1;
+}
+.wheel-emoji.active{
+  transform: scale(1.7);
 }
 .i {
   position: absolute;
