@@ -61,6 +61,8 @@
             <div class="menu-emoji">😑</div>
 
             <div class="menu-emoji">😤</div>
+
+            <div class="menu-emoji magic">🔮</div>
           </div>
         </div>
       </div>
@@ -72,6 +74,8 @@
       const menu = document.getElementById("top-menu");
       const homeButton = document.getElementById("home-button");
       const menuContent = document.querySelector(".menu-content");
+      /** @type{HTMLDivElement} */
+      const magicEmoji = document.querySelector(".menu-emoji.magic");
       // console.log(menuContent)
 
       homeButton.onclick = () => {
@@ -91,7 +95,7 @@
       menu.onmouseleave = () => handleChangeOpen(false);
 
       for (let i = 0; i < menuContent.children.length; i++) {
-        if (i > 4) menuContent.children[i].style.display = "none";
+        // if (i > 5) menuContent.children[i].style.display = "none";
         menuContent.children[i].onclick = () => {
           window.location.href = `./page${i + 1}.html`;
         };
@@ -111,6 +115,13 @@
 
       menuContent.children[4].style.right = vh(81);
       menuContent.children[4].style.top = vh(271);
+
+      console.log(magicEmoji);
+      magicEmoji.style.top = vh(280);
+      magicEmoji.style.left = vh(260);
+      magicEmoji.onclick = () => {
+        window.location.href = `./page${9}.html`;
+      };
     </script>
   </body>
 </html>

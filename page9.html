@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>How's your mood today?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./common.css" />
+    <link rel="stylesheet" href="./page1.css" />
+    <style>
+      .slider {
+        animation: slide 4.5s linear infinite;
+      }
+      @keyframes slide {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-10%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-col content">
+      <div class="top spacer">
+        <div class="hamburger">
+          <img src="images/ham.png" />
+          <img src="images/ham.png" />
+          <img src="images/ham.png" />
+        </div>
+        <div class="top-txt">Home</div>
+      </div>
+      <div
+        style="
+          height: 13.4vh;
+          width: 100%;
+          overflow: hidden;
+          background-color: #f3a208;
+        "
+        class="flex-row"
+      >
+        <!-- prettier-ignore -->
+        <div
+          class="slider"
+          style="
+            font-size: 5.86vh;
+            color: white;
+            white-space: pre;
+            align-self: center;
+            width: fit-content;
+          "
+        >How’s Your Mood  Today?     How’s Your Mood  Today?     How’s Your Mood  Today?     How’s Your Mood  Today?     How’s Your Mood  Today?     How’s Your Mood  Today?     How’s Your Mood  Today?     How’s Your Mood  Today?     How’s Your Mood  Today?     How’s Your Mood  Today?     </div>
+      </div>
+      <div id="inner-content" style="flex: 1; position: relative">
+        <canvas id="world" style="height: 100%; width: 100%"></canvas>
+        <div
+          style="
+            position: absolute;
+            font-size: 8.79vh;
+            color: black;
+            top: 4.39vh;
+            left: 4.37vh;
+          "
+        >
+          How's your mood today?
+        </div>
+      </div>
+    </div>
+    <div class="top actual">
+  <div id="hamburger-actual" class="hamburger">
+    <img src="images/ham.png" />
+    <img src="images/ham.png" />
+    <img src="images/ham.png" />
+  </div>
+  <div class="menu-container">
+    <div id="top-menu">
+      <div id="home-button">Back to Wheel</div>
+      <div class="menu-content">
+         
+        <div class="menu-emoji">😮‍💨</div>
+          
+        <div class="menu-emoji">😪</div>
+          
+        <div class="menu-emoji">😘</div>
+          
+        <div class="menu-emoji">😑</div>
+          
+        <div class="menu-emoji">😤</div>
+         
+        <div class="menu-emoji magic">🔮 </div>
+      </div>
+    </div>
+  </div>
+  <div id="top-title" class="top-txt">Home</div>
+</div>
+<script>
+  const title = document.getElementById("top-title");
+  const hamburger = document.getElementById("hamburger-actual");
+  const menu = document.getElementById("top-menu");
+  const homeButton = document.getElementById("home-button");
+  const menuContent = document.querySelector(".menu-content");
+  /** @type{HTMLDivElement} */
+  const magicEmoji = document.querySelector(".menu-emoji.magic");
+  // console.log(menuContent)
+
+  homeButton.onclick = () => {
+    window.location.href = "./index.html";
+  };
+
+  const handleChangeOpen = (shouldOpen) => {
+    if (shouldOpen) {
+      title.innerText = "How's your mood today?";
+      menu.style.display = "flex";
+    } else {
+      title.innerText = "Home";
+      menu.style.display = "none";
+    }
+  };
+  hamburger.onmouseenter = () => handleChangeOpen(true);
+  menu.onmouseleave = () => handleChangeOpen(false);
+
+  for (let i = 0; i < menuContent.children.length; i++) {
+    // if (i > 5) menuContent.children[i].style.display = "none";
+    menuContent.children[i].onclick = () => {
+      window.location.href = `./page${i + 1}.html`;
+    };
+  }
+  const vh = (px) => `${px / 10.24}vh`;
+  menuContent.children[0].style.left = vh(54);
+  menuContent.children[0].style.top = vh(223);
+
+  menuContent.children[1].style.right = vh(39);
+  menuContent.children[1].style.top = vh(144);
+
+  menuContent.children[2].style.right = vh(186);
+  menuContent.children[2].style.top = vh(57);
+
+  menuContent.children[3].style.right = vh(46);
+  menuContent.children[3].style.bottom = vh(48);
+
+  menuContent.children[4].style.right = vh(81);
+  menuContent.children[4].style.top = vh(271);
+
+  console.log(magicEmoji);
+  magicEmoji.style.top = vh(280);
+  magicEmoji.style.left = vh(260);
+  magicEmoji.onclick = () => {
+    window.location.href = `./page${9}.html`;
+  };
+</script>
+
+  </body>
+  <script>
+    const emojis = [
+      "😘",
+      "😡",
+      "😤",
+      "😑",
+      "😵‍💫",
+      "😂",
+      "😱",
+      "😎",
+      "😪",
+      "😭",
+      "😳",
+      "🤤",
+    ];
+    const canvas = document.getElementById("world");
+  </script>
+</html>
