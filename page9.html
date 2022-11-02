@@ -22,7 +22,7 @@
     </style>
   </head>
   <body>
-    <div class="flex-col content">
+    <div class="flex-col" style="height: 100%">
       <div class="top spacer">
         <div class="hamburger">
           <img src="images/ham.png" />
@@ -33,7 +33,7 @@
       </div>
       <div
         style="
-          height: 13.4vh;
+          min-height: 13.4vh;
           width: 100%;
           overflow: hidden;
           background-color: #f3a208;
@@ -53,7 +53,10 @@
         >How’s Your Mood  Today?     How’s Your Mood  Today?     How’s Your Mood  Today?     How’s Your Mood  Today?     How’s Your Mood  Today?     How’s Your Mood  Today?     How’s Your Mood  Today?     How’s Your Mood  Today?     How’s Your Mood  Today?     How’s Your Mood  Today?     </div>
       </div>
       <div id="inner-content" style="flex: 1; position: relative">
-        <canvas id="world" style="height: 100%; width: 100%"></canvas>
+        <canvas
+          id="world"
+          style="height: 100%; width: 100%; pointer-events: all"
+        ></canvas>
         <div
           style="
             position: absolute;
@@ -151,6 +154,7 @@
 </script>
 
   </body>
+  <script src="./matter.js" type="text/javascript"></script>
   <script>
     const emojis = [
       "😘",
@@ -166,6 +170,107 @@
       "😳",
       "🤤",
     ];
+    const gravityScale = 0.8;
     const canvas = document.getElementById("world");
+    const { width, height } = canvas.getBoundingClientRect();
+    // canvas.width = width;
+    // canvas.height = height;
+    console.log(canvas.getBoundingClientRect(), width, height);
+    const engine = Matter.Engine.create({
+      gravity: {
+        y: gravityScale,
+      },
+    });
+    const render = Matter.Render.create({
+      canvas,
+      engine,
+      options: {
+        showVelocity: true,
+        background: "transparent",
+        // wireframeBackground: "transparent",
+        height,
+        width,
+        pixelRatio: devicePixelRatio,
+        wireframes: false,
+      },
+    });
+    Matter.Render.run(render);
+
+    const runner = Matter.Runner.create();
+    Matter.Runner.run(runner, engine);
+    const Composite = Matter.Composite,
+      Bodies = Matter.Bodies,
+      Mouse = Matter.Mouse,
+      MouseConstraint = Matter.MouseConstraint;
+
+    const radius = width / 13;
+    const wallThickness = 50;
+    const frictionAir = 0.01;
+    const restitution = 0.9;
+    const textureScale = radius * 0.034;
+    const extraWallHeight = 10;
+    const startUpBoost = height;
+
+    const mouse = Mouse.create(render.canvas),
+      mouseConstraint = MouseConstraint.create(engine, {
+        mouse: mouse,
+        constraint: {
+          stiffness: 0.2,
+          render: {
+            visible: false,
+          },
+        },
+      });
+    Composite.add(engine.world, mouseConstraint);
+    Composite.add(engine.world, [
+      ...emojis.map((emoji, i) =>
+        Bodies.circle(
+          Math.random() * width,
+          Math.random() * height - Math.random() * startUpBoost,
+          radius,
+          {
+            frictionAir,
+            restitution,
+            density: 10,
+            render: {
+              sprite: {
+                texture: `images/wheel-emoji-${i + 1}x.png`,
+                xScale: textureScale,
+                yScale: textureScale,
+              },
+            },
+          }
+        )
+      ),
+      // walls
+      Bodies.rectangle(
+        width / 2,
+        height + wallThickness / 2,
+        width,
+        wallThickness,
+        { isStatic: true }
+      ),
+      Bodies.rectangle(
+        -wallThickness / 2,
+        height / 2 - extraWallHeight / 2,
+        wallThickness,
+        height + extraWallHeight,
+        {
+          isStatic: true,
+        }
+      ),
+      Bodies.rectangle(
+        width + wallThickness / 2,
+        height / 2 - extraWallHeight / 2,
+        wallThickness,
+        height + extraWallHeight,
+        { isStatic: true }
+      ),
+    ]);
+    console.log(render, engine, runner);
+    Matter.Render.lookAt(render, {
+      min: { x: 0, y: 0 },
+      max: { x: width, y: height },
+    });
   </script>
 </html>
