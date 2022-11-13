@@ -26,6 +26,7 @@
         <div class="top-txt">Home</div>
       </div>
       <div class="page1-main">
+        <div style="flex: 84"></div>
         <div class="left">
           <div class="howdy">
             How’s Your <br />
@@ -36,47 +37,24 @@
             <img class="cake" src="images/cake.jpg" />
           </div>
         </div>
+        <div style="flex: 96"></div>
         <div class="wheel">
           <img class="clock-pin" src="images/clockpin.svg" />
           <img class="clock-center" src="images/clockcenter.svg" />
-          <div class="emoji-container n1">
-            <!-- <div class="wheel-emoji">😮‍💨</div> -->
-            <img class="wheel-emoji" src="images/wheel-emoji-1x.png" />
-          </div>
-          <div class="emoji-container n2">
-            <img class="wheel-emoji" src="images/wheel-emoji-2x.png" />
-          </div>
-          <div class="emoji-container n3">
-            <img class="wheel-emoji" src="images/wheel-emoji-3x.png" />
-          </div>
-          <div class="emoji-container n4">
-            <img class="wheel-emoji" src="images/wheel-emoji-4x.png" />
-          </div>
-          <div class="emoji-container n5">
-            <img class="wheel-emoji" src="images/wheel-emoji-5x.png" />
-          </div>
-          <div class="emoji-container n6">
-            <img class="wheel-emoji" src="images/wheel-emoji-6x.png" />
-          </div>
-          <div class="emoji-container n7">
-            <img class="wheel-emoji" src="images/wheel-emoji-7x.png" />
-          </div>
-          <div class="emoji-container n8">
-            <img class="wheel-emoji" src="images/wheel-emoji-8x.png" />
-          </div>
-          <div class="emoji-container n9">
-            <img class="wheel-emoji" src="images/wheel-emoji-9x.png" />
-          </div>
-          <div class="emoji-container n10">
-            <img class="wheel-emoji" src="images/wheel-emoji-10x.png" />
-          </div>
-          <div class="emoji-container n11">
-            <img class="wheel-emoji" src="images/wheel-emoji-11x.png" />
-          </div>
-          <div class="emoji-container n12">
-            <img class="wheel-emoji" src="images/wheel-emoji-12x.png" />
-          </div>
+          <div class="emoji-container n1"></div>
+          <div class="emoji-container n2"></div>
+          <div class="emoji-container n3"></div>
+          <div class="emoji-container n4"></div>
+          <div class="emoji-container n5"></div>
+          <div class="emoji-container n6"></div>
+          <div class="emoji-container n7"></div>
+          <div class="emoji-container n8"></div>
+          <div class="emoji-container n9"></div>
+          <div class="emoji-container n10"></div>
+          <div class="emoji-container n11"></div>
+          <div class="emoji-container n12"></div>
         </div>
+        <div style="flex: 65"></div>
       </div>
       <div class="top actual">
         <div id="hamburger-actual" class="hamburger">
@@ -86,19 +64,31 @@
         </div>
         <div class="menu-container">
           <div id="top-menu">
-            <div id="home-button">Back to Wheel</div>
+            <div id="home-button">
+              <div style="margin-top: 0.13em">Back to Wheel</div>
+            </div>
             <div class="menu-content">
-              <div class="menu-emoji">😮‍💨</div>
+              <div class="menu-emoji 0">😮‍💨</div>
 
-              <div class="menu-emoji">😪</div>
+              <div class="menu-emoji 1">😪</div>
 
-              <div class="menu-emoji">😘</div>
+              <div class="menu-emoji 2">😘</div>
 
-              <div class="menu-emoji">😑</div>
+              <div class="menu-emoji 3">😑</div>
 
-              <div class="menu-emoji">😤</div>
+              <div class="menu-emoji 4">😤</div>
 
-              <div class="menu-emoji magic">🔮</div>
+              <div class="menu-emoji 5">🙄</div>
+
+              <div class="menu-emoji 6">😎</div>
+
+              <div class="menu-emoji 7">😍</div>
+
+              <div class="menu-emoji 8">🔮</div>
+
+              <div class="menu-emoji 9">😨</div>
+
+              <div class="menu-emoji 10">😵‍💫</div>
             </div>
           </div>
         </div>
@@ -131,7 +121,7 @@
         menu.onmouseleave = () => handleChangeOpen(false);
 
         for (let i = 0; i < menuContent.children.length; i++) {
-          // if (i > 5) menuContent.children[i].style.display = "none";
+          // if (i > 11) menuContent.children[i].style.display = "none";
           menuContent.children[i].onclick = () => {
             window.location.href = `./page${i + 1}.html`;
           };
@@ -143,8 +133,8 @@
         menuContent.children[1].style.right = vh(39);
         menuContent.children[1].style.top = vh(144);
 
-        menuContent.children[2].style.right = vh(186);
-        menuContent.children[2].style.top = vh(57);
+        menuContent.children[2].style.right = vh(176);
+        menuContent.children[2].style.top = vh(51);
 
         menuContent.children[3].style.right = vh(46);
         menuContent.children[3].style.bottom = vh(48);
@@ -152,19 +142,60 @@
         menuContent.children[4].style.right = vh(81);
         menuContent.children[4].style.top = vh(271);
 
-        console.log(magicEmoji);
-        magicEmoji.style.top = vh(280);
-        magicEmoji.style.left = vh(260);
-        magicEmoji.onclick = () => {
-          window.location.href = `./page${9}.html`;
-        };
+        menuContent.children[5].style.left = vh(89);
+        menuContent.children[5].style.top = vh(48);
+
+        menuContent.children[6].style.right = vh(226);
+        menuContent.children[6].style.bottom = vh(129);
+
+        menuContent.children[7].style.left = vh(113);
+        menuContent.children[7].style.bottom = vh(60);
+
+        menuContent.children[8].style.top = vh(270);
+        menuContent.children[8].style.left = vh(240);
+
+        menuContent.children[9].style.bottom = vh(129);
+        menuContent.children[9].style.right = vh(226);
+
+        menuContent.children[10].style.top = vh(153);
+        menuContent.children[10].style.left = vh(217);
+
+        // console.log(magicEmoji);
+        // magicEmoji.style.top = vh(280);
+        // magicEmoji.style.left = vh(250);
+        // magicEmoji.onclick = () => {
+        //   window.location.href = `./page${9}.html`;
+        // };
       </script>
 
       <script>
+        const emojis = [
+          "😮‍💨",
+          "😪",
+          "😘",
+          "😑",
+          "😤",
+          "🙄",
+          "😎",
+          "😍",
+          "🔮",
+          "😨",
+          "😵‍💫",
+          "😝",
+        ];
+        for (let i = 0; i < 12; i++) {
+          const container = document.querySelector(
+            `.emoji-container.n${i + 1}`
+          );
+          const w = container.getBoundingClientRect().width;
+          container.innerHTML = `<div class="wheel-emoji" style="font-size:${
+            (w * 70) / 110
+          }px">${emojis[i]}</div>`;
+        }
         const wheel = document.querySelector(".wheel");
         const btn = document.querySelector(".clickhere");
         const pin = document.querySelector(".clock-pin");
-        const emojis = document.querySelectorAll(".wheel-emoji");
+        const emojiImgs = document.querySelectorAll(".wheel-emoji");
         const cake = document.querySelector(".cake");
 
         let emojiIndex = 0;
@@ -174,7 +205,7 @@
           pin.style.transform = `translate(-50%, -100%) rotate(${n}deg)`;
           emojiIndex = Math.floor((((n - 15) % 360) / 30 + 12) % 12);
           // console.log(emojiIndex);
-          emojis.forEach((emoji, index) => {
+          emojiImgs.forEach((emoji, index) => {
             if (index === emojiIndex) {
               emoji.classList.add("active");
             } else {
@@ -184,10 +215,10 @@
         };
 
         const goDegree = () => {
-          let max = 5;
+          let max = 11;
           const magicIndex = 9;
           console.log("page", emojiIndex + 1);
-          emojis.forEach((emoji, index) => {
+          emojiImgs.forEach((emoji, index) => {
             if (
               index === emojiIndex &&
               (emojiIndex < max || emojiIndex + 1 === magicIndex)

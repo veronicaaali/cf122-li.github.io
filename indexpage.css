@@ -12,7 +12,6 @@
 .left {
   display: flex;
   flex-direction: column;
-  margin-left: 5.833vw;
 }
 .howdy {
 
@@ -44,7 +43,6 @@
   aspect-ratio: 1;
   height: 69vh;
   margin-top: 7.42vh;
-  margin-left: 10vw;
   border-radius: 50%;
   position: relative;
 }
@@ -128,7 +126,9 @@
 }
 .wheel-emoji {
   transition: all 90ms ease-in-out;
-  width: 56.25%;
+  /* width: 56.25%; */
+  font-size: 100%;
+
   aspect-ratio: 1;
 }
 .wheel-emoji.active{

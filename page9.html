@@ -33,7 +33,9 @@
       </div>
       <div
         style="
+          height: 13.4vh;
           min-height: 13.4vh;
+          flex-shrink: 0;
           width: 100%;
           overflow: hidden;
           background-color: #f3a208;
@@ -45,14 +47,19 @@
           class="slider"
           style="
             font-size: 5.86vh;
+            line-height: 5.86vh;
             color: white;
             white-space: pre;
+            margin-top:0.13em;
             align-self: center;
             width: fit-content;
           "
         >How’s Your Mood  Today?     How’s Your Mood  Today?     How’s Your Mood  Today?     How’s Your Mood  Today?     How’s Your Mood  Today?     How’s Your Mood  Today?     How’s Your Mood  Today?     How’s Your Mood  Today?     How’s Your Mood  Today?     How’s Your Mood  Today?     </div>
       </div>
-      <div id="inner-content" style="flex: 1; position: relative">
+      <div
+        id="inner-content"
+        style="flex: 1; position: relative; min-height: 0"
+      >
         <canvas
           id="world"
           style="height: 100%; width: 100%; pointer-events: all"
@@ -78,20 +85,44 @@
   </div>
   <div class="menu-container">
     <div id="top-menu">
-      <div id="home-button">Back to Wheel</div>
+      <div id="home-button">
+        <div style="margin-top: 0.13em">Back to Wheel</div>
+      </div>
       <div class="menu-content">
-         
-        <div class="menu-emoji">😮‍💨</div>
-          
-        <div class="menu-emoji">😪</div>
-          
-        <div class="menu-emoji">😘</div>
-          
-        <div class="menu-emoji">😑</div>
-          
-        <div class="menu-emoji">😤</div>
-         
-        <div class="menu-emoji magic">🔮 </div>
+        
+
+        <div class="menu-emoji 0">😮‍💨</div>
+        
+
+        <div class="menu-emoji 1">😪</div>
+        
+
+        <div class="menu-emoji 2">😘</div>
+        
+
+        <div class="menu-emoji 3">😑</div>
+        
+
+        <div class="menu-emoji 4">😤</div>
+        
+
+        <div class="menu-emoji 5">🙄</div>
+        
+
+        <div class="menu-emoji 6">😎</div>
+        
+
+        <div class="menu-emoji 7">😍</div>
+        
+
+        <div class="menu-emoji 8">🔮</div>
+        
+
+        <div class="menu-emoji 9">😨</div>
+        
+
+        <div class="menu-emoji 10">😵‍💫</div>
+        
       </div>
     </div>
   </div>
@@ -124,7 +155,7 @@
   menu.onmouseleave = () => handleChangeOpen(false);
 
   for (let i = 0; i < menuContent.children.length; i++) {
-    // if (i > 5) menuContent.children[i].style.display = "none";
+    // if (i > 11) menuContent.children[i].style.display = "none";
     menuContent.children[i].onclick = () => {
       window.location.href = `./page${i + 1}.html`;
     };
@@ -136,8 +167,8 @@
   menuContent.children[1].style.right = vh(39);
   menuContent.children[1].style.top = vh(144);
 
-  menuContent.children[2].style.right = vh(186);
-  menuContent.children[2].style.top = vh(57);
+  menuContent.children[2].style.right = vh(176);
+  menuContent.children[2].style.top = vh(51);
 
   menuContent.children[3].style.right = vh(46);
   menuContent.children[3].style.bottom = vh(48);
@@ -145,12 +176,30 @@
   menuContent.children[4].style.right = vh(81);
   menuContent.children[4].style.top = vh(271);
 
-  console.log(magicEmoji);
-  magicEmoji.style.top = vh(280);
-  magicEmoji.style.left = vh(260);
-  magicEmoji.onclick = () => {
-    window.location.href = `./page${9}.html`;
-  };
+  menuContent.children[5].style.left = vh(89);
+  menuContent.children[5].style.top = vh(48);
+  
+  menuContent.children[6].style.right = vh(226);
+  menuContent.children[6].style.bottom = vh(129);
+  
+  menuContent.children[7].style.left = vh(113);
+  menuContent.children[7].style.bottom = vh(60);
+
+  menuContent.children[8].style.top = vh(270);
+  menuContent.children[8].style.left = vh(240);
+
+  menuContent.children[9].style.bottom = vh(129);
+  menuContent.children[9].style.right = vh(226);
+
+  menuContent.children[10].style.top = vh(153);
+  menuContent.children[10].style.left = vh(217);
+
+  // console.log(magicEmoji);
+  // magicEmoji.style.top = vh(280);
+  // magicEmoji.style.left = vh(250);
+  // magicEmoji.onclick = () => {
+  //   window.location.href = `./page${9}.html`;
+  // };
 </script>
 
   </body>
@@ -207,7 +256,7 @@
     const wallThickness = 50;
     const frictionAir = 0.01;
     const restitution = 0.9;
-    const textureScale = radius * 0.034;
+    const textureScale = (radius * 0.037 * 60) / 160;
     const extraWallHeight = 10;
     const startUpBoost = height;
 
@@ -234,7 +283,7 @@
             density: 10,
             render: {
               sprite: {
-                texture: `images/wheel-emoji-${i + 1}x.png`,
+                texture: `images/wheel-emoji-${i + 1}y.png`,
                 xScale: textureScale,
                 yScale: textureScale,
               },
